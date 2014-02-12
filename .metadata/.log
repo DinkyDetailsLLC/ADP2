@@ -362,3 +362,9 @@ org.w3c.dom.DOMException: Not Found
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-12 01:09:35.878
+!MESSAGE activity_main.xml: Dimension "0" in attribute "padding" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-12 01:09:36.068
+!MESSAGE activity_main.xml: Dimension "0" in attribute "padding" is missing unit!
