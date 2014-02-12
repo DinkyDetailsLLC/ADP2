@@ -13,6 +13,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        
         TextClock tc = (TextClock) findViewById(R.id.textclock1);
     }
 
