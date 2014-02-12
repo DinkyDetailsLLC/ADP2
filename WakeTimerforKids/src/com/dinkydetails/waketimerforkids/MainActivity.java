@@ -3,6 +3,8 @@ package com.dinkydetails.waketimerforkids;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.TextClock;
+
 
 public class MainActivity extends Activity {
 
@@ -10,6 +12,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        TextClock tc = (TextClock) findViewById(R.id.textclock1);
     }
 
 
