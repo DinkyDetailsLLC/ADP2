@@ -8,32 +8,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/hello_world" 
+        />
+    
         <TextClock
         android:id="@+id/textclock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerVertical
         android:text="@string/clock" />
-        
-        <TextView
-        android:id="@+id/smallClockText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textclock1"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="3dp"
-        android:text="@string/smallClockText" 
-        />
-        <TextView
-        android:id="@+id/largeClockText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/smallClockText"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="3dp"
-        android:text="@string/largeClockText" 
-        />
-        
 
 </RelativeLayout>
