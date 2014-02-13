@@ -1,25 +1,19 @@
 package com.dinkydetails.waketimerforkids;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.Window;
-import android.widget.TextClock;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+public class MainActivity extends Fragment {
 
-public class MainActivity extends Activity {
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.activity_main, container, false);
+		return view;
+	}
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_main);
-		
-        TextClock tc = (TextClock) findViewById(R.id.textclock1);
- 
-    }
-
-
-    
 }
