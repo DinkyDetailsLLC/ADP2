@@ -6,7 +6,7 @@
     
      <fragment
         android:id="@+id/fragment_main_activity"
-        android:name="com.dinkydetails.waketimerforkids.MainActivity"
+        android:name="com.dinkydetails.waketimerforkids.MainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

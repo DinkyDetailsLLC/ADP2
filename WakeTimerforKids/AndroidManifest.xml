@@ -7,7 +7,10 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="18" />
-
+	
+	<!-- Need this in order to save the settings -->
+       <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+       
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,8 +26,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dinkydetails.waketimerforkids.MainFragment">
+            android:name="com.dinkydetails.waketimerforkids.MainActivity">
         </activity>
+        
+        <!-- Setting up some receivers to listen for time changes -->
+        <receiver android:name=".WakeUpTimeReceiver" />
+        <receiver android:name=".NightTimeSoothReceiver" />
+        <receiver android:name=".NapTimeReceiver" />
     </application>
 
 </manifest>

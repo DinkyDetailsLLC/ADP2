@@ -1,36 +1,34 @@
+/*Class used to show main activity layout using fragment*/
+
 package com.dinkydetails.waketimerforkids;
 
+import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
+import android.view.Window;
 
-public class MainActivity extends Fragment {
+public class MainActivity extends Activity {
 
-	TextView prefButton;
-	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.activity_main, container, false);
-		prefButton = (TextView) view.findViewById(R.id.prefButton);
-
-
-		// Click listener to open main activity
-		prefButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				startActivity(new Intent(getActivity(), PreferenceFragment.class));
-			}
-		});
-		return view;
+		super.onCreate(savedInstanceState);
+		// request to remove window title
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.main_fragment);
+	}
+	
+	// Fragment manager used to replace the main activity layout with fragment
+	public void selectFrag(View view) {
+		 Fragment fr = new MainFragment();
+		 FragmentManager fm = getFragmentManager();
+	     FragmentTransaction fragmentTransaction = fm.beginTransaction();
+	     fragmentTransaction.replace(R.id.fragment_main_activity, fr);
+	     fragmentTransaction.commit();
+		 
 	}
 
 }
