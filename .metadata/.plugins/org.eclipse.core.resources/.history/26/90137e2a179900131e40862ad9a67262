@@ -386,8 +386,7 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 			}
 		}
 	}
-	
-	//AsyncTask to show background color on UserInterface 
+	/* AsyncTask to show background color on UserInterface */
 	private class changeToNormalMode extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -415,7 +414,7 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 		};
 	};
 
-	// backtoNormalPosition 
+	/* backtoNormalPosition */
 	void backtonormalposition() {
 		try {
 			getColors = PreferenceData.getStringValues(getActivity(),
@@ -449,10 +448,10 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 		}
 	}
 
-	
-	 // Method used to check which part was saved in preferences either color or
-	 // picture before running soothing
-	 
+	/*
+	 * Method used to check which part was saved in preferences either color or
+	 * picture before running soothing
+	 */
 	void checkImageorColorBG() {
 		try {
 			getColors = PreferenceData.getStringValues(getActivity(),
@@ -483,7 +482,7 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 			changebgColor.setBackgroundColor(Color.parseColor(getColors));
 		}
 
-		// Run the thread for time soothing 
+		/* Run the thread for time soothing */
 		Thread bgColor = new Thread(new MainFragment());
 		bgColor.start();
 		PreferenceData.setBooleanValues(getActivity(), "Runthread", false);
