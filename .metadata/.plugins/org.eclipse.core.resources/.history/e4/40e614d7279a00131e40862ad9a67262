@@ -412,22 +412,19 @@ public class Preferences extends Fragment implements OnClickListener {
 	private void setAlarm(Calendar targetCal, int hourofday, int minute) {
 
 		if (ConstantMethodsVariables.wakeupTime == true) {
-			wakeupTimer.setText(ConstantMethodsVariables.TwHourFormet(
-					hourofday, minute));
+			wakeupTimer.setText(hourofday + ":" + minute);
 			PreferenceData.setStringValues(getActivity(), "WakeUpTime",
-					ConstantMethodsVariables.TwHourFormet(hourofday, minute));
+					hourofday + ":" + minute);
 			callReciever(targetCal, "WakeUpTime");
 		} else if (ConstantMethodsVariables.nightSoothTime == true) {
-			nightTimeSooth.setText(ConstantMethodsVariables.TwHourFormet(
-					hourofday, minute));
+			nightTimeSooth.setText(hourofday + ":" + minute);
 			PreferenceData.setStringValues(getActivity(), "NightSoothTime",
-					ConstantMethodsVariables.TwHourFormet(hourofday, minute));
+					hourofday + ":" + minute);
 			callReciever(targetCal, "NightSoothTime");
 		} else if (ConstantMethodsVariables.napTime == true) {
-			napModeTimer.setText(ConstantMethodsVariables.TwHourFormet(
-					hourofday, minute));
-			PreferenceData.setStringValues(getActivity(), "NapTime",
-					ConstantMethodsVariables.TwHourFormet(hourofday, minute));
+			napModeTimer.setText(hourofday + ":" + minute);
+			PreferenceData.setStringValues(getActivity(), "NapTime", hourofday
+					+ ":" + minute);
 			callReciever(targetCal, "NapTime");
 		}
 

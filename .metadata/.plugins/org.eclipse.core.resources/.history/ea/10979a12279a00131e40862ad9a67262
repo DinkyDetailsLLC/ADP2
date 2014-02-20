@@ -313,14 +313,14 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 	// set opacity of the screen to 80%
 	void setOpacity() {
 		// Setting Button
-		// Setting Button
-		settingButton.getBackground().setAlpha(10);
-		// WakeUpTime Button
-		wakeUpTime.setTextColor(Color.argb(80, 80, 80, 80));
-		// In The Text
-		midText.setTextColor(Color.argb(80, 80, 80, 80));
-		// Day Text
-		dayText.setTextColor(Color.argb(80, 80, 80, 80));
+		settingButton.getBackground().setAlpha(50);
+		wakeUpTime.setTextColor(Color
+				.parseColor(ConstantMethodsVariables.lightwhite));
+		midText.setTextColor(Color
+				.parseColor(ConstantMethodsVariables.lightwhite));
+		dayText.setTextColor(Color
+				.parseColor(ConstantMethodsVariables.lightwhite));
+
 	}
 //Soothe mode will be set to 3 seconds for testing but then back to 10 minutes once figured out
 	//******************** NOT WORKING RIGHT NOW *************************
