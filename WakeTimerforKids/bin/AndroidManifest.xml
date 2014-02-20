@@ -10,6 +10,7 @@
 	
 	<!-- Need this in order to save the settings -->
        <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+       <uses-permission android:name="android.permission.WAKE_LOCK" />
        
     <application
         android:allowBackup="true"
