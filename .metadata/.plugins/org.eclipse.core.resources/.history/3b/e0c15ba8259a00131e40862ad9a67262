@@ -98,7 +98,7 @@ public class ConstantMethodsVariables {
 		return returnTime;
 	}
 
-	// Add padding to numbers less than ten 
+	/** Add padding to numbers less than ten */
 	private static String pad(int c) {
 		if (c >= 10)
 			return String.valueOf(c);

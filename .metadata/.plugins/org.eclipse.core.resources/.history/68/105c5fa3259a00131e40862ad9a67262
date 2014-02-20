@@ -50,7 +50,7 @@ public class ConstantMethodsVariables {
 	public static String lightwhite = "#524E4E";
 
 	public final static String[] SoothArray = { "#71726f", "#b4b7b0",
-		"#7a8c9e", "#a9ccbf", "#d8c8af", "#d7c8de", "TimetoSleep" };
+			"#7a8c9e", "#a9ccbf", "#d8c8af", "#d7c8de" };
 
 	public static final int PICTURE_TAKEN_FROM_CAMERA = 1;
 	public static final int PICTURE_TAKEN_FROM_GALLERY = 2;
@@ -83,26 +83,5 @@ public class ConstantMethodsVariables {
 			e.getMessage();
 			return null;
 		}
-	}
-	//Changing Time format to 12 hours
-	public static String TwHourFormet(int hour, int minute) {
-		String returnTime = null;
-		if (hour < 12) {
-			returnTime = pad(hour) + ":" + pad(minute) + " " + "am";
-		} else if (hour >= 12) {
-			if (hour == 12)
-				returnTime = pad(hour) + ":" + pad(minute) + " " + "pm";
-			else
-				returnTime = pad(hour - 12) + ":" + pad(minute) + " " + "pm";
-		}
-		return returnTime;
-	}
-
-	// Add padding to numbers less than ten 
-	private static String pad(int c) {
-		if (c >= 10)
-			return String.valueOf(c);
-		else
-			return "0" + String.valueOf(c);
 	}
 }
