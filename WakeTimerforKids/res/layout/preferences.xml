@@ -178,9 +178,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="12:45"
+                    android:text="12:45 pm"
                     android:textColor="@android:color/white"
-                    android:textSize="35sp" />
+                    android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -239,7 +239,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="30dp"
-                android:text="12:45"
+                android:text="12:45 pm"
                 android:textColor="@android:color/white"
                 android:textSize="35sp" />
         </RelativeLayout>
@@ -276,7 +276,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginRight="20dp"
-                    android:text="12:45"
+                    android:text="12:45 pm"
                     android:textColor="@android:color/white"
                     android:textSize="30sp" />
             </RelativeLayout>   

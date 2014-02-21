@@ -4,68 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0060ff" >
-    
-	    <RelativeLayout
+
+    <RelativeLayout
         android:id="@+id/mainColorlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        >
 
-        <ScrollView
+        <RelativeLayout
+            android:id="@+id/settinglayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
+            <TextView
+                android:id="@+id/settingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/settingsmall" />
+        </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/settingButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/settingsmall" />
-    </RelativeLayout>
+            android:layout_below="@+id/settinglayout"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/sun" />
+
+            <TextView
+                android:id="@+id/WakeUpTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="11:45"
+                android:textColor="@color/white"
+                android:textSize="100sp" 
+                android:visibility="gone"/>
+
             
-    <LinearLayout
-        android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="20dp" >
-
-
-        <ImageView
-                    android:id="@+id/sun"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/sun" />
-
-        <TextView
-                    android:id="@+id/WakeUpTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="11:45"
-                    android:textColor="@color/white"
-                    android:textSize="100sp" />
- 
-                <!-- EMULATOR DOESNT LIKE THIS, PHONE DOES, HAVE TO TOGGLE 
         <TextClock
         android:id="@+id/textclock1"
         android:layout_width="wrap_content"
@@ -75,47 +59,35 @@
         android:textSize="100sp"
         android:format12Hour="h:mm"
         android:text="@string/clock" />
-                -->
-                </LinearLayout>
-      
+            
 
-        <TextView
-                    android:id="@+id/midText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="IN THE"
-                    android:textColor="@android:color/white"
-                    android:textSize="32sp" />
+            <TextView
+                android:id="@+id/midText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="IN THE"
+                android:textColor="@android:color/white"
+                android:textSize="32sp" />
 
-                <TextView
-                    android:id="@+id/dayTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="AFTERNOON"
-                    android:textColor="@android:color/white"
-                    android:textSize="48sp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/dayTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="AFTERNOON"
+                android:textColor="@android:color/white"
+                android:textSize="48sp" />
+        </LinearLayout>
 
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/linearLayout1"
-                        android:layout_gravity="center"
-                        android:orientation="vertical" >
-
-                        <GridView
-                            android:id="@+id/gridview"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:columnWidth="42dp"
-                            android:numColumns="auto_fit" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </LinearLayout>
-        </ScrollView>
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:columnWidth="50dp"
+            android:numColumns="6" />
     </RelativeLayout>
 
 </FrameLayout>

@@ -9,12 +9,18 @@ import com.dinkydetails.constants.ConstantMethodsVariables;
 import com.dinkydetails.constants.PreferenceData;
 
 public class WakeUpTimeReceiver extends BroadcastReceiver {
-	//Display a toast if the system time matches the Wake time setting
+
+	MainFragment updateFragment = new MainFragment();
+
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		Log.d("Alarm received!", "Alarm received!");
 		ConstantMethodsVariables.displayToastAct(context, "Alarm received!");
 		PreferenceData.setStringValues(context, "WakeUpOrSleep", "WakeUp");
+		Intent i = new Intent(context, MainActivity.class);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		context.startActivity(i);
 	}
 }

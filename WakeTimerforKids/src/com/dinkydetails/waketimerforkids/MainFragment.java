@@ -22,9 +22,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.dinkydetails.adapter.CustomGridViewAdapter;
@@ -44,6 +46,7 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 	PowerManager.WakeLock mWakeLock;
 
 	TextView wakeUpTime, settingButton, midText, dayText;
+	TextClock textClock;
 	ImageView sun;
 	View view;
 	
@@ -56,8 +59,12 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 	
 	// TypeFace to change the font in chocolate font
 	Typeface face;
-
-	public static RelativeLayout changebgColor;
+	
+	//Frame layout to set the color or image as background
+	public static FrameLayout changebgColor;
+	
+	//Relative layout to set the color or image as for soothing
+	public static RelativeLayout tintedColor;
 	public static String getColors;
 	public static Bitmap backgroungbitmap;
 	public static String backgroundImage;
@@ -121,6 +128,7 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 		// wakeupTime
 		wakeUpTime.setText(ConstantMethodsVariables.getSystemTime());
 		wakeUpTime.setTypeface(face);
+		textClock.setTypeface(face);
 		
 		/// Change the text depending on the time brackets.
 		showhourClock = ConstantMethodsVariables.getSystemHour();
@@ -273,6 +281,13 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 		}
 
 	}
+	
+	//Run the thread for time soothing 
+	void runSoothingThread() {
+		Thread bgColor = new Thread(new MainFragment());
+		bgColor.start();
+		PreferenceData.setBooleanValues(getActivity(), "Runthread", false);
+	}
 
 	@Override
 	public void onDestroy() {
@@ -285,14 +300,13 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 	
 	 // method used to initialize the instance of fragments ex textview, gridview
 	 // and other layouts
-	 
-
 	void init() {
 		gridView = (GridView) view.findViewById(R.id.gridview);
 		wakeUpTime = (TextView) view.findViewById(R.id.WakeUpTime);
+		textClock = (TextClock) view.findViewById(R.id.textclock1);
 		settingButton = (TextView) view.findViewById(R.id.settingButton);
-		changebgColor = (RelativeLayout) view
-				.findViewById(R.id.mainScrollLayout);
+		changebgColor = (FrameLayout) view.findViewById(R.id.mainScrollLayout);
+		tintedColor = (RelativeLayout) view.findViewById(R.id.mainColorlayout);
 		sun = (ImageView) view.findViewById(R.id.sun);
 		midText = (TextView) view.findViewById(R.id.midText);
 		dayText = (TextView) view.findViewById(R.id.dayTime);
@@ -312,15 +326,18 @@ public class MainFragment extends Fragment implements OnClickListener, Runnable 
 
 	// set opacity of the screen to 80%
 	void setOpacity() {
+		// Change background color
+		tintedColor.setBackgroundColor(Color.parseColor("#000000"));
+		// tintedColor.getBackground().setAlpha(20);
 		// Setting Button
-		// Setting Button
-		settingButton.getBackground().setAlpha(10);
+		settingButton.getBackground().setAlpha(20);
 		// WakeUpTime Button
-		wakeUpTime.setTextColor(Color.argb(80, 80, 80, 80));
+		wakeUpTime.setTextColor(Color.argb(100, 80, 80, 100));
 		// In The Text
-		midText.setTextColor(Color.argb(80, 80, 80, 80));
+		midText.setTextColor(Color.argb(100, 100, 100, 100));
 		// Day Text
-		dayText.setTextColor(Color.argb(80, 80, 80, 80));
+		dayText.setTextColor(Color.argb(100, 100, 100, 100));
+		
 	}
 //Soothe mode will be set to 3 seconds for testing but then back to 10 minutes once figured out
 	//******************** NOT WORKING RIGHT NOW *************************
