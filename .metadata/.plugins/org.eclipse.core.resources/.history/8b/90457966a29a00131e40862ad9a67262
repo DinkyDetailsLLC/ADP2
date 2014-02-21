@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainScrollLayout"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0060ff" >
+    android:background="#000000">
 
-    <RelativeLayout
-        android:id="@+id/mainColorlayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
         <RelativeLayout
-            android:id="@+id/settinglayout"
+            android:id="@+id/mainScrollLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent" 
+            android:background="#0060ff" >
 
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
 
                     <TextView
                         android:id="@+id/settingButton"
@@ -25,12 +34,11 @@
                         android:background="@drawable/settingsmall" />
                 </RelativeLayout>
 
-                  <LinearLayout
-           		    android:id="@+id/linearLayout1"
-          			android:layout_width="match_parent"
-          			android:layout_height="wrap_content"
-         			android:layout_below="@+id/settinglayout"
-        		    android:orientation="vertical" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp" >
 
                     <ImageView
                         android:id="@+id/sun"
@@ -60,7 +68,7 @@
                 android:textColor="@color/white"
                 android:textSize="100sp" />
                     -->
-                
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/midText"
@@ -81,6 +89,12 @@
                     android:textSize="48sp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout1"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
 
                 <GridView
                     android:id="@+id/gridview"
@@ -89,6 +103,8 @@
                     android:layout_gravity="center"
                     android:columnWidth="42dp"
                     android:numColumns="auto_fit" />
-    </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
-</FrameLayout>
+</ScrollView>

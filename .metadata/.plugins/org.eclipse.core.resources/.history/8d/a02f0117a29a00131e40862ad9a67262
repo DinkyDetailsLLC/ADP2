@@ -1,37 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainScrollLayout"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/mainScrollLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0060ff" >
     
-	    <RelativeLayout
-        android:id="@+id/mainColorlayout"
+	<RelativeLayout
+        android:id="@+id/settinglayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/settingButton"
@@ -43,10 +19,11 @@
     </RelativeLayout>
             
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="20dp" >
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settinglayout"
+        android:orientation="vertical" >
 
 
         <ImageView
@@ -76,7 +53,6 @@
         android:format12Hour="h:mm"
         android:text="@string/clock" />
                 -->
-                </LinearLayout>
       
 
         <TextView
@@ -98,24 +74,15 @@
                     android:textSize="48sp" />
             </LinearLayout>
 
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/linearLayout1"
-                        android:layout_gravity="center"
-                        android:orientation="vertical" >
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="85dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:columnWidth="50dp"
+                    android:numColumns="6" />
 
-                        <GridView
-                            android:id="@+id/gridview"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:columnWidth="42dp"
-                            android:numColumns="auto_fit" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
+        </RelativeLayout>
 
-</FrameLayout>
+        
