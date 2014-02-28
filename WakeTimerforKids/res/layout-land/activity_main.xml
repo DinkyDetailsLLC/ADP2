@@ -8,8 +8,7 @@
     <RelativeLayout
         android:id="@+id/mainColorlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content" >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -62,22 +61,20 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="25dp"
                                 android:text="11:45"
+                                android:visibility="gone"
                                 android:textColor="@color/white"
-                                android:textSize="0sp" 
-                                android:visibility="gone"/>
+                                android:textSize="100sp" />
 
-                            
-                 <TextClock
-                android:id="@+id/textclock1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:format12Hour="h:mm"
-                android:text="@string/clock"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="25dp"
-                android:textColor="@color/white"
-                android:textSize="100sp" />
-                            
+                            <TextClock
+                                android:id="@+id/textclock1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="25dp"
+                                android:format12Hour="hh:mm"
+                                android:text="@string/clock"
+                                android:textColor="@color/white"
+                                android:textSize="100sp" />
                         </LinearLayout>
 
                         <TextView

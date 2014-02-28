@@ -80,7 +80,7 @@ public class DayDreamActivity extends DreamService implements Runnable {
 		void changeBackground();
 	}
 
-	/* handler to call background instance on UserInterface */
+	// handler to call background instance on UserInterface 
 	private MyHandler handler = new MyHandler() {
 
 		@Override
@@ -95,7 +95,7 @@ public class DayDreamActivity extends DreamService implements Runnable {
 		void getBackToNormalstate();
 	}
 
-	/* handler to handle state of system */
+	// handler to handle state of system 
 	private NapHandler napHandler = new NapHandler() {
 
 		@Override
@@ -246,7 +246,7 @@ public class DayDreamActivity extends DreamService implements Runnable {
 			}
 		}
 
-		/* Check if nap mode is enabled or not */
+		// Check if nap mode is enabled or not 
 		try {
 			isNapModeEnabled = PreferenceData.getBooleanValues(
 					DayDreamActivity.this, "Runthread");

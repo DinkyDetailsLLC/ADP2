@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.dinkydetails.constants.ConstantMethodsVariables;
 import com.dinkydetails.constants.PreferenceData;
+import com.dinkydetails.daydream.DayDreamActivity;
 
 public class WakeUpTimeReceiver extends BroadcastReceiver {
 
@@ -22,5 +23,10 @@ public class WakeUpTimeReceiver extends BroadcastReceiver {
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		context.startActivity(i);
+
+		Intent serviceIntent = new Intent();
+		serviceIntent.setAction("com.dinkydetails.daydream.DayDreamActivity");
+		context.startService(serviceIntent);
+
 	}
 }
